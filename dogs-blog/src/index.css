@@ -1,0 +1,22 @@
+/* Keep Vite defaults where helpful */
+:root {
+  color-scheme: light dark;
+}
+
+/* Markdown content tweaks inside Post page body box */
+.markdown h1, .markdown h2, .markdown h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.markdown p {
+  margin: 0.75rem 0;
+}
+.markdown ul, .markdown ol {
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+.markdown blockquote {
+  border-left: 4px solid #319795; /* teal.500 */
+  padding-left: 0.75rem;
+  color: #4A5568; /* gray.600 */
+}
