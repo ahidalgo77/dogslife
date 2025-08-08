@@ -1,4 +1,4 @@
-import matter from "gray-matter";
+import fm from "front-matter";
 
 export interface BlogPostMeta {
   title: string;
@@ -22,8 +22,9 @@ function slugFromPath(path: string): string {
 }
 
 const posts: BlogPost[] = Object.entries(rawModules).map(([path, raw]) => {
-  const { content, data } = matter(raw);
-  const meta = data as BlogPostMeta;
+  const parsed = fm<BlogPostMeta>(raw);
+  const meta = parsed.attributes;
+  const content = parsed.body;
   return {
     slug: slugFromPath(path),
     content,
